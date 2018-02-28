@@ -20,4 +20,5 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder ".", "/home/vagrant/lab"
+  config.ssh.forward_x11 = true
 end

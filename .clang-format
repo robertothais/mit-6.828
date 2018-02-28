@@ -1,6 +1,5 @@
 BasedOnStyle: LLVM
 
-AllowShortIfStatementsOnASingleLine: false
 ColumnLimit: 80
 Cpp11BracedListStyle: false
 IndentWidth: 4

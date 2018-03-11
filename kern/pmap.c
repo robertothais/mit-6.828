@@ -670,7 +670,7 @@ static void check_kern_pgdir(void) {
 // the check_kern_pgdir() function; it shouldn't be used elsewhere.
 
 static physaddr_t check_va2pa(pde_t *pgdir, uintptr_t va) {
-    volatile pte_t *p;
+    pte_t *p;
 
     pgdir = &pgdir[PDX(va)];
     if (!(*pgdir & PTE_P))

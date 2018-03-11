@@ -335,7 +335,7 @@ pte_t *pgdir_walk(pde_t *pgdir, const void *va, int create) {
     struct PageInfo *pp;
 
     pgdir = pgdir + PDX(va);
-    if (!*pgdir) {
+    if (!(*pgdir & PTE_P)) {
         if (!create)
             return NULL;
 
@@ -405,7 +405,7 @@ int page_insert(pde_t *pgdir, struct PageInfo *pp, void *va, int perm) {
 
     pp->pp_ref++;
 
-    if (*p)
+    if (*p & PTE_P)
         page_remove(pgdir, va);
 
     *p = page2pa(pp) | perm | PTE_P;

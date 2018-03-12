@@ -3,11 +3,11 @@
 #ifndef JOS_KERN_TRAP_H
 #define JOS_KERN_TRAP_H
 #ifndef JOS_KERNEL
-# error "This is a JOS kernel header; user programs should not #include it"
+#error "This is a JOS kernel header; user programs should not #include it"
 #endif
 
-#include <inc/trap.h>
 #include <inc/mmu.h>
+#include <inc/trap.h>
 
 /* The kernel's interrupt descriptor table */
 extern struct Gatedesc idt[];
